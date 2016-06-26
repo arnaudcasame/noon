@@ -1,7 +1,7 @@
 var nono = (function(){
 
-	var tags = /\b(div|aside|section|article|span|a|ul|li|ol|header|footer|h1|h2|h3|h4|h5|h6|img|p|button|input|select|label|table|theader|tbody|td|tr)\b/;
-	var attributes = /\b(color|background-color|font-size)\b/;
+	var tags = /\b(?:div|aside|section|article|span|a|ul|li|ol|header|footer|h1|h2|h3|h4|h5|h6|img|p|button|input|select|label|table|theader|tbody|td|tr)\b/;
+	var attributes = /\b(?:color|background-color|font-size)\b/;
 	var recup = null;
 
 	function selection(arg){
