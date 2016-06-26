@@ -42,7 +42,7 @@ var nono = (function(){
 		}
 	}
 
-	function createjs(tag){
+	function create(tag){
 		if(typeof tag === 'string'){
 			if(tags.test(tag)){
 				recup = document.createElement(tag);
@@ -53,9 +53,34 @@ var nono = (function(){
 		}
 	}
 
+	function display(obj, msg){
+		if(typeof obj === 'object'){
+			if(innerText){
+				obj.innerText = msg;
+			}else if(obj.textContent){
+				obj.textContent = msg;
+			}
+			//obj.innerText = msg;
+			console.log(innerText);
+		}
+		return this;
+	}
+
+	function stick(){
+		if(arguments.length === 1){
+			console.log(arguments[0]);
+			document.body.appendChild(arguments[0]);
+		}else if(arguments.length === 2){
+			arguments[1].appendChild(arguments[0]);
+		}
+		return this;
+	}
+
 	return{
 		select : selection,
 		css : style,
-		createjs : createjs
+		create : create,
+		display: display,
+		stick: stick
 	};
 })();
