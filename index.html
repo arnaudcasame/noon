@@ -6,15 +6,28 @@
 	</head>
 	<body>
 		<div id="example">Whats going on</div>
+		<ul>
+			<li class="liste">What?</li>
+			<li class="liste">Who?</li>
+			<li class="liste">Which?</li>
+		</ul>
 		<script src='module/dsm.js'></script>
 		<script>
-			nono.select('#example').css('color', 'red').css('background-color', 'lightgray').css('font-size', '25px');
+			nono.select('#example').css('color', 'indianred').css('background-color', 'lightgray').css('font-size', '25px');
 
 			var paragraph = nono.create('p');
 
-			nono.display(paragraph, 'what the fuck?');
-			nono.stickTo(paragraph).css('font-size', '50px').css('color', 'red').css('text-decoration', 'underline');
-			
+			nono.stickTo(paragraph).display(paragraph, 'The chaining is working perfectly').css('font-size', '25px').css('color', 'green').css('text-decoration', 'underline').css('border', '1px solid blue');
+
+
+
+			nono.select('body').css('background-color', 'gray');
+			var many = nono.select('.liste');
+			var i = 0;
+			while(i<many.length){
+				nono.select(many[i]).css('color', 'lightgreen');
+				i++;
+			}			
 		</script>
 	</body>
 </html>
