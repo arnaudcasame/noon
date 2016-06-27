@@ -6,29 +6,29 @@ var nono = (function(){
 
 	function selection(arg){
 		if(typeof arg === 'string'){
-			if(arg[0] === '.'){
+			if(arg[0] === '.'){  // If the selection is by string of a specific class
 				arg = arg.substr(1);
 				recup = document.getElementsByClassName(arg);
-				if(recup.length === 1){
+				if(recup.length === 1){ // if there's only one element selected
 					recup = recup[0];
-				}else if(recup.length > 1){
+				}else if(recup.length > 1){ // if there's multiple elements selected
 					return recup;
 				}
-			}else if(arg[0] === '#'){
+			}else if(arg[0] === '#'){ // If the selection is by string of an id
 				arg = arg.substr(1);
 				recup = document.getElementById(arg);
-			}else if(tags.test(arg)){
+			}else if(tags.test(arg)){  // If the selection is by string of an html tag
 				recup = document.getElementsByTagName(arg);
-				if(recup.length === 1){
+				if(recup.length === 1){  // if there's only one element selected
 					recup = recup[0];
-				}else if(recup.length > 1){
+				}else if(recup.length > 1){  // if there's multiple elements selected
 					return recup;
 				}
 			}else{
 				return undefined;
 			}
 
-		}else if(typeof arg === 'object'){
+		}else if(typeof arg === 'object'){ // If the selection is a DOM object
 			recup = arg;
 		}
 		return this;
