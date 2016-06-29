@@ -1,7 +1,8 @@
 var nono = (function(){
 
-	var tags = /\b(?:div|aside|section|article|span|a|ul|li|ol|header|footer|h1|h2|h3|h4|h5|h6|img|p|button|input|select|label|table|theader|tbody|td|tr|body)\b/;
-	var attributes = /\b(?:color|background-color|font-size|text-decoration|border)\b/;
+	var tags = /\b(?:div|aside|section|article|span|a|ul|li|ol|header|footer|h1|h2|h3|h4|h5|h6|img|p|button|input|select|label|table|thead|tbody|th|td|tr|body|caption)\b/;
+	var attributes = /\b(?:color|background-color|font-size|text-decoration|border|font-style|width)\b/;
+	var embeds = /\b(?:src|id|class|href)\b/;
 	var recup = null;
 
 	function selection(arg){
@@ -34,6 +35,19 @@ var nono = (function(){
 		return this;
 	}
 
+	function embed(attr, prop){
+		if(embeds.test(attr)){
+			if(attr === 'src'){
+				recup.src = prop;
+			}
+		}if(embeds.test(attr)){
+			if(attr === 'href'){
+				recup.href = prop;
+			}
+		}
+		return this;
+	}
+
 	function style(attr, prop){
 		if(attributes.test(attr)){
 			if(attr === 'color'){
@@ -45,8 +59,17 @@ var nono = (function(){
 			}else if(attr === 'text-decoration'){
 				recup.style.textDecoration = prop;
 				return this;
+			}else if(attr === 'font-style'){
+				recup.style.fontStyle = prop;
+				return this;
 			}else if(attr === 'border'){
 				recup.style.border = prop;
+				return this;
+			}else if(attr === 'width'){
+				recup.style.width = prop;
+				return this;
+			}else if(attr === 'height'){
+				recup.style.height = prop;
 				return this;
 			}else if(attr === 'font-size'){
 				if(typeof prop === 'number'){
@@ -74,6 +97,9 @@ var nono = (function(){
 		if(typeof obj === 'object'){
 			obj.innerText = msg;
 			obj.textContent = msg;
+		}else{
+			recup.innerText = arguments[0];
+			recup.textContent = arguments[0];
 		}
 		return this;
 	}
@@ -82,7 +108,7 @@ var nono = (function(){
 		if(arguments.length === 1){
 			document.body.appendChild(arguments[0]);
 		}else if(arguments.length === 2){
-			arguments[1].appendChild(arguments[0]);
+			arguments[0].appendChild(arguments[1]);
 		}
 		return this;
 	}
@@ -90,6 +116,7 @@ var nono = (function(){
 	return{
 		select  : selection,
 		css     : style,
+		embed   : embed,
 		create  : create,
 		display : display,
 		stickTo : stick
