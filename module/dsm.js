@@ -33,7 +33,7 @@ function $noon(selector, all){
 					nono.element[i].style[prop] = value;
 				}
 			}else{
-				(!nono.created) ? nono.element.style[prop] = value : nono.created.style[prop] = value;
+				nono.element.style[prop] = value ;
 			}
 		}
 		return nono;
