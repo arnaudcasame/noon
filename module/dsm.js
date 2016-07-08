@@ -1,4 +1,4 @@
-function noon(selector, all){
+function $noon(selector, all){
 	var nono = {};
 	nono.selected = selector;
 	if(!all){
@@ -14,7 +14,7 @@ function noon(selector, all){
 			nono.element.setAttribute(name,value);
 		}
 		return nono;
-	}
+	};
 
 	nono.css = function(prop, value){
 		if(!value){
@@ -33,11 +33,33 @@ function noon(selector, all){
 					nono.element[i].style[prop] = value;
 				}
 			}else{
-				nono.element.style[prop] = value;
+				(!nono.created) ? nono.element.style[prop] = value : nono.created.style[prop] = value;
 			}
 		}
 		return nono;
-	}
+	};
+
+	nono.create = function(tag){
+		nono.created = document.createElement(tag);
+		return nono;
+	};
+
+	nono.showText = function(msg){
+		nono.created.innerText = msg;
+		nono.created.textContent = msg;
+		return nono;
+	};
+
+	nono.stick = function(){
+		nono.element.appendChild(nono.created);
+		return nono;
+	};
+
+	nono.text = function(msg){
+		nono.element.innerText = msg;
+		nono.element.textContent = msg;
+		return nono;
+	};
 
 	return nono;
 }
