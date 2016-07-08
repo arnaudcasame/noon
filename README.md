@@ -1,6 +1,6 @@
-# nono
+# $noon
 
-nono is a DOM utility module that group several functions ready  to use and make javascript coding easy in a jQuery style.
+$noon is a DOM utility module that group several functions ready  to use and make javascript coding easy in a jQuery style.
 This module provides a simplified interface to the complicated DOM selection problem, hides the chaos from you and lets you free to not using all the nasty javascript codes to interact with it.
 
 Note: To start this project: 
@@ -18,6 +18,6 @@ Feel free to contribute whenever you want, just clone the repository and then ad
 
 
 ## License information
-nono has no license yet. You can use, copy, modify, merge, publish, distribute, sublicense it. But you always need to state that Arnaud Casamé is the original author of this template.
+$noon has no license yet. You can use, copy, modify, merge, publish, distribute, sublicense it. But you always need to state that Arnaud Casamé is the original author of this template.
 
-Project is developed and maintained by Arnaud Casamé 
+The $noon project is developed and maintained by Arnaud Casamé 
