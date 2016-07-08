@@ -5,7 +5,7 @@
 		<title>DOM Selection Module</title>
 	</head>
 	<body>
-		<div id="example">Whats going on</div>
+		<div id="example" >Whats going on</div>
 		<ul>
 			<li class="liste">What?</li>
 			<li class="liste">Who?</li>
@@ -13,40 +13,11 @@
 		</ul>
 		<script src='module/dsm.js'></script>
 		<script>
-			nono.select('#example')
-			.css('color', 'indianred')
-			.css('background-color', 'lightgray')
-			.css('font-size', '25px');
+			//noon('#example').attr('style', 'color: red');
 
-			var paragraph = nono.create('p');
-			nono.stickTo(paragraph)
-			.display(paragraph, 'The chaining is working perfectly')
-			.css('font-size', '25px')
-			.css('color', 'springgreen')
-			.css('text-decoration', 'underline')
-			.css('border', '1px solid blue');
-
-
-
-			nono.select('body').css('background-color', 'gray');
-			var many = nono.select('.liste');
-			var i = 0;
-			while(i<many.length){
-				nono.select(many[i]).css('color', 'lightgreen').css('font-style', 'italic');
-				i++;
-			}
-
-			var image = nono.create('img'); // 153 characters
-			nono.stickTo(image)
-			.embed('src', 'img/angelina.jpg')
-			.css('border', '2px solid coral')
-			.css('width', '20%');
-
-			// var image = document.createElement('img'); // 187 charaters
-			// image.src = 'img/angelina.jpg';
-			// document.body.appendChild(image);
-			// image.style.border = '2px solid coral';
-			// image.style.width = '20%';
+			noon('#example').css('font-size', '40px').css('font-family', 'Verdana').css('color', 'coral');
+			noon('.liste', '.').css('color', 'red').css('text-decoration', 'underline').css('cursor', 'pointer');
+			noon('body').css('background-color', 'lightgray');
 		</script>
 	</body>
 </html>
