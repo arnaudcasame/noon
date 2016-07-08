@@ -41,21 +41,12 @@ function $noon(selector, all){
 
 	nono.create = function(tag){
 		nono.created = document.createElement(tag);
+		nono.element.appendChild(nono.created);
+		nono.element = nono.created;
 		return nono;
 	};
 
 	nono.showText = function(msg){
-		nono.created.innerText = msg;
-		nono.created.textContent = msg;
-		return nono;
-	};
-
-	nono.stick = function(){
-		nono.element.appendChild(nono.created);
-		return nono;
-	};
-
-	nono.text = function(msg){
 		nono.element.innerText = msg;
 		nono.element.textContent = msg;
 		return nono;
