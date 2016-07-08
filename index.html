@@ -15,9 +15,12 @@
 		<script>
 			//noon('#example').attr('style', 'color: red');
 
-			noon('#example').css('font-size', '40px').css('font-family', 'Verdana').css('color', 'coral');
-			noon('.liste', '.').css('color', 'red').css('text-decoration', 'underline').css('cursor', 'pointer');
-			noon('body').css('background-color', 'lightgray');
+			$noon('#example').css('font-size', '40px').css('font-family', 'Verdana').css('color', 'coral');
+			$noon('.liste', '.').css('font-size', '1.5em').css('color', '#48CC00').css('text-decoration', 'underline').css('cursor', 'pointer').css('font-family', 'consolas');
+			$noon('body').css('background-color', 'lightgray');
+
+			$noon('body').create('div').showText('Je suis là!').stick().css('color', 'red').css('font-size', '40px');
+
 		</script>
 	</body>
 </html>
