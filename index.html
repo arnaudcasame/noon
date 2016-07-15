@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
 		<meta charset='utf-8'>
+		<link rel="icon" href="icon/noon.jpg">
 		<title>$noon</title>
 	</head>
 	<body>
@@ -21,8 +23,29 @@
 
 			$noon('body').create('div').attr('id', 'contain').showText('Je suis Angelina!').css('color', 'red').css('font-size', '40px');
 
-			$noon('#contain').create('img').attr('src', 'img/angelina.jpg').css('width', '20%').css('border', '3px solid coral').css('display', 'block');
+			$noon('#contain').create('img').attr('src', 'img/angelina.jpg').attr('id', 'image').css('width', '20%').css('border', '3px solid coral').css('display', 'block').on('click', function(){
+				
+				var larg = $noon('#image').css('width');
+				
+				if($noon('#image').css('width') === '266.594px'){
+					$noon('#image').css('width', '30%');
+				}else{
+					$noon('#image').css('width', '20%');
+				}
+				
+			});
 
+			$noon('body').create('p').attr('id', 'wykens').showText('Similien sa k\'ap fèt?').css('color', 'indianred').css('font-size', '3em');
+			
+			$noon('#example').on('click', function(){
+				
+				if( $noon('#example').css('color') === 'rgb(255, 0, 0)'){
+					$noon('#example').css('color', 'coral');
+				}else{
+					$noon('#example').css('color', 'red');
+				}
+				
+			});
 		</script>
 	</body>
 </html>
