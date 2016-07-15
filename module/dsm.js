@@ -52,5 +52,10 @@ function $noon(selector, all){
 		return nono;
 	};
 
+	nono.on = function(action, callback){
+		nono.element.addEventListener(action, callback, false);
+		return nono;
+	}
+
 	return nono;
 }
