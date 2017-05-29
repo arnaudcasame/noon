@@ -11,4 +11,7 @@
 
     }; // Creating the GetorMakeDom constructor
 
+    //Exposes $noon to global scope
+    global.$noon = $noon;
+
 })(window); // Creating a unique scope
