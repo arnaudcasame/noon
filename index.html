@@ -7,46 +7,58 @@
 		<title>$noon</title>
 	</head>
 	<body>
-		<div id="example" >Whats going on</div>
+		<!--<div id="example" >Whats going on</div>
 		<ul>
 			<li class="liste">What?</li>
 			<li class="liste">Who?</li>
 			<li class="liste">Which?</li>
+		</ul>-->
+
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
 		</ul>
-		<script src='module/dsm.js'></script>
+		<!--<script src='module/dsm.js'></script>-->
+		<script src='module/$noon.js'></script>
 		<script>
 			//noon('#example').attr('style', 'color: red');
 
-			$noon('#example').css('font-size', '40px').css('font-family', 'Verdana').css('color', 'coral');
-			$noon('.liste', '.').css('font-size', '1.5em').css('color', '#48CC00').css('text-decoration', 'underline').css('cursor', 'pointer').css('font-family', 'consolas');
-			$noon('body').css('background-color', 'lightgray');
+			// $noon('#example').css('font-size', '40px').css('font-family', 'Verdana').css('color', 'coral');
+			// $noon('.liste', '.').css('font-size', '1.5em').css('color', '#48CC00').css('text-decoration', 'underline').css('cursor', 'pointer').css('font-family', 'consolas');
+			// $noon('body').css('background-color', 'lightgray');
 
-			$noon('body').create('div').attr('id', 'contain').showText('Je suis Angelina!').css('color', 'red').css('font-size', '40px');
+			// $noon('body').create('div').attr('id', 'contain').showText('Je suis Angelina!').css('color', 'red').css('font-size', '40px');
 
-			$noon('#contain').create('img').attr('src', 'img/angelina.jpg').attr('id', 'image').css('width', '20%').css('border', '3px solid coral').css('display', 'block').on('click', function(){
+			// $noon('#contain').create('img').attr('src', 'img/angelina.jpg').attr('id', 'image').css('width', '20%').css('border', '3px solid coral').css('display', 'block').on('click', function(){
 				
-				var larg = $noon('#image').css('width');
+			// 	var larg = $noon('#image').css('width');
 				
-				if($noon('#image').css('width') === '266.594px'){
-					$noon('#image').css('width', '30%');
-				}else{
-					$noon('#image').css('width', '20%');
-				}
+			// 	if($noon('#image').css('width') === '266.594px'){
+			// 		$noon('#image').css('width', '30%');
+			// 	}else{
+			// 		$noon('#image').css('width', '20%');
+			// 	}
 				
-			});
+			// });
 
-			$noon('body').create('p').attr('id', 'wykens').showText('Similien sa k\'ap fèt?').css('color', 'indianred').css('font-size', '3em');
+			// $noon('body').create('p').attr('id', 'wykens').showText('Similien sa k\'ap fèt?').css('color', 'indianred').css('font-size', '3em');
 			
-			$noon('#example').css('-webkit-user-select', 'none').css('cursor', 'pointer');
-			$noon('#example').on('click', function(){
+			// $noon('#example').css('-webkit-user-select', 'none').css('cursor', 'pointer');
+			// $noon('#example').on('click', function(){
 				
-				if( $noon('#example').css('color') === 'rgb(255, 0, 0)'){
-					$noon('#example').css('color', 'coral');
-				}else{
-					$noon('#example').css('color', 'red');
-				}
+			// 	if( $noon('#example').css('color') === 'rgb(255, 0, 0)'){
+			// 		$noon('#example').css('color', 'coral');
+			// 	}else{
+			// 		$noon('#example').css('color', 'red');
+			// 	}
 				
-			});
+			// });
+
+			//$noon().append()
+			$noon('ul').append('<li>4</li>');
+			$noon('ul').append(document.createElement('li'));
+			$noon('ul').append($noon('li:first-child'));
 		</script>
 	</body>
 </html>
