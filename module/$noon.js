@@ -9,6 +9,15 @@
 
     let GetorMakeDom = function(params, context){
 
+        let currentContext = doc;
+            if(context){
+                if(context.nodeType){ // it's either a document node or element node
+                    currentContext = context;
+                }else{ // it's a string selector, use it to select a node
+                    currentContext = doc.querySelectorAll(context);
+                }
+            }
+
     }; // Creating the GetorMakeDom constructor
 
     //Exposes $noon to global scope
