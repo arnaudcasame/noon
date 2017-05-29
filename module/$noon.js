@@ -117,4 +117,17 @@
         }
     };
 
+    $noon.fn.append = function(stringOrObject){
+        return this.each(function(){
+            if(typeof stringOrObject === 'string'){
+                this.insertAdjacentHTML('beforeend',stringOrObject);
+            }else{
+                var that = this;
+                $noon(stringOrObject).each(function(name,value){
+                    that.insertAdjacentHTML('beforeend',value.outerHTML);
+                });
+            }
+        });
+    };
+
 })(window); // Creating a unique scope
