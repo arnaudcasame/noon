@@ -95,4 +95,26 @@
         {0:ELEMENT_NODE,1:ELEMENT_NODE,length:2} */
     };
 
+    $noon.fn.html = function(htmlString){
+        if(htmlString){
+            return this.each(function(){ /* notice I return this so it's chainable if
+                called with param */
+                this.innerHTML = htmlString;
+            });
+        }else{
+            return this[0].innerHTML;
+        }
+    };
+
+    $noon.fn.text = function(textString){
+        if(textString){
+            return this.each(function(){ /* notice I return this so it's chainable if
+                called with param */
+                this.textContent = textString;
+            });
+        }else{
+            return this[0].textContent.trim();
+        }
+    };
+
 })(window); // Creating a unique scope
