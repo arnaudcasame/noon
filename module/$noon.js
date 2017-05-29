@@ -86,4 +86,13 @@
     // short cut to prototype
     $noon.fn = GetorMakeDom.prototype;
 
+    $noon.fn.each = function (callback) {
+        var len = this.length;
+        for(var i = 0; i < len; i++){
+            callback.call(this[i], i, this[i]);
+        }
+        return this; /* make it chainable by returning e.g.,
+        {0:ELEMENT_NODE,1:ELEMENT_NODE,length:2} */
+    };
+
 })(window); // Creating a unique scope
